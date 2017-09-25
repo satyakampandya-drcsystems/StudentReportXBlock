@@ -1,0 +1,9 @@
+/* CSS for StudentReportXBlock */
+
+.student_report_block .count {
+    font-weight: bold;
+}
+
+.student_report_block p {
+    cursor: pointer;
+}
