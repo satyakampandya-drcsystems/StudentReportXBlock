@@ -1,7 +1,7 @@
 # StudentReportXBlock
 open edX XBlock to show the student report for the course.
 
-# Usecase:
+# Use case:
 open edX allows any Instructor to hide the progress tab so as an Instructor if you want your students can see the their grade report at the end of the course (Assuming section prerequisite has been set) then you may add this XBlock as last component on last unit of the last section.
 
 # How to Install (For sysadmin):
