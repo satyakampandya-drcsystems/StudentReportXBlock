@@ -17,3 +17,6 @@ pip install git+https://github.com/naresh21/StudentReportXBlock.git#egg=student_
 - From Advanced select "Student Report"
 
 Thats it !!
+
+--
+Developed by: Satyakam Pandya
