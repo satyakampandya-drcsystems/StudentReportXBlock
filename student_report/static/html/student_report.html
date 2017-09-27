@@ -8,13 +8,17 @@
             <table style="width: 100%; table-layout: fixed;">
                 <thead>
                     <tr>
+                        <th style="padding: 8px; border-bottom: 2px solid #ddd;">Assessment No.</th>
                         <th style="padding: 8px; border-bottom: 2px solid #ddd;">Assessment</th>
                         <th style="padding: 8px; border-bottom: 2px solid #ddd;">Percentage</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style="font-size: 95%;">
                     {% for d in data_summary %}
                         <tr>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;"> 
+                                {{ forloop.counter }} 
+                            </td>
                             <td style="padding: 8px; border-bottom: 1px solid #ddd;">
                                 {{ d.label }}
                             </td>
@@ -26,6 +30,7 @@
                 </tbody>
                 <tfoot>
                     <tr>
+                        <td style="border-top: 2px solid #ddd;"></td>
                         <td style="font-weight: bold; padding: 8px; border-top: 2px solid #ddd;">Total</td>
                         <td style="font-weight: bold; padding: 8px; border-top: 2px solid #ddd;">{{ final_result }}</td>
                     </tr>
@@ -37,7 +42,7 @@
             {% if is_passed %}
                 <h6 style="text-align: center; color: #00cc00">Congratulations, you have successfully passed this course.</h6>
             {% else %}
-                <h6 style="text-align: center; color: #cc0000">You are not passed in this course.</h6>
+                <h6 style="text-align: center; color: #cc0000">Oops, You have not passed this course.</h6>
             {% endif %}
         </div>
     </div>
