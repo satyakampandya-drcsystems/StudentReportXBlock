@@ -60,7 +60,7 @@ class StudentReportXBlock(XBlock):
                     data_dict = {}
                     data_dict['label'] = summary['detail'].split("=")[0]
                     data_dict['percentage'] = summary['detail'].split("=")[1]
-                    if not data_dict['percentage']:
+                    if not int(data_dict['percentage'].split("%")[0]):
                         hide_result = True
                         break
                     data_summary.append(data_dict)
