@@ -1,3 +1,9 @@
+{% if hide_result %}
+<div style="text-align: center; margin: 15px 0; padding: 5px;">
+    <p>You have not completed all the assessment yet.</p>
+    <p>To view the final results complete all the assessment in the course.</p>
+</div>
+{% else %}
 <div style="border: 1px grey solid; width: 100%; border-radius: 10px; text-align: center;">
     <div style="padding: 30px; margin: 10px; text-align: center;">
         <div>
@@ -47,3 +53,4 @@
         </div>
     </div>
 </div>
+{% endif %}

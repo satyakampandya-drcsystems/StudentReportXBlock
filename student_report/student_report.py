@@ -54,11 +54,15 @@ class StudentReportXBlock(XBlock):
             grade_summary = course_grade.summary
             data_summary = []
             
+            hide_result = False
             for summary in grade_summary['section_breakdown']:
                 if summary.has_key('prominent'):
                     data_dict = {}
                     data_dict['label'] = summary['detail'].split("=")[0]
                     data_dict['percentage'] = summary['detail'].split("=")[1]
+                    if not data_dict['percentage']:
+                        hide_result = True
+                        break
                     data_summary.append(data_dict)
             
             final_result = str(grade_summary['percent'] * 100.0) + '%'
@@ -71,6 +75,7 @@ class StudentReportXBlock(XBlock):
             context['data_summary'] = data_summary
             context['final_result'] = final_result
             context['is_passed'] = course_grade.passed
+            context['hide_result'] = hide_result
             html = Template(self.resource_string("static/html/student_report.html"))
             frag = Fragment(html.render(Context(context)))
             frag.add_css(self.resource_string("static/css/student_report.css"))
